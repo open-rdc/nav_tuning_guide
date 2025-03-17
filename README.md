@@ -1,5 +1,5 @@
 # nav_tuning_guide
-ナビゲーションのためのドキュメント
+ナビゲーションのためのドキュメント. 以下の一部ファイル名およびコマンドは, [orne-box](https://github.com/open-rdc/orne-box)を基準にしています.
 
 ## 目次
 
