@@ -7,7 +7,7 @@
 
 ---
 ## 1. 調整の準備
-まず, 調整のための準備を行います. Rvizを開き, Global OptionsのFixed Frameを`odom`に設定します. そしてaddパネルから`LaserScan`を追加し, その減衰時間`Decay Time`を高く(20くらい)設定します. 
+まず, 調整のための準備を行います. Rvizを開き, Global OptionsのFixed Frameを`odom`に設定します. そしてaddパネルから`LaserScan`を追加し, その`Decay Time`を高く(20くらい)設定します. 
 `LaserScan`のtopicも指定してください. (/scan等)  
 設定をsaveさせておくと次回以降楽です. 
 
