@@ -56,7 +56,8 @@ $ rosbag play rosbagファイル名
 - 上記の方法とは異なり, パラメータを実際に変更しながらパーティクルの変化を確認することができます
 ```bash
 # 端末1
-$ roslaunch roslaunch orne_box_navigation_executor play_waypoints_nav_box.launch // amcl起動
+$ roslaunch roslaunch orne_box_navigation_executor play_waypoints_nav_box.launch  
+// amcl起動
 
 # 端末2
 $ rosbag play rosbagファイル名 --topics /tf /tf_static /scan
