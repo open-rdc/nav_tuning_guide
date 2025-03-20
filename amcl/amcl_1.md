@@ -38,6 +38,8 @@ $ rosbag record -a
 Rvizを使用して, パーティクルの散らばりや自己位置のずれ方を確認します. これにより, どのパラメータに問題があるかをある程度予想します.  
 
 #### コマンド例:
+##### 過去のデータを再生して確認
+- 過去のデータをそのまま確認します
 ```bash
 # 端末1
 $ roscore
@@ -49,6 +51,17 @@ $ rviz -d nav.rviz
 # 端末3
 $ rosbag play rosbagファイル名
 ```
+
+##### オフラインで自己位置推定を行って確認
+- 上記の方法とは異なり, パラメータを実際に変更しながらパーティクルの変化を確認することができます
+```bash
+# 端末1
+$ roslaunch roslaunch orne_box_navigation_executor play_waypoints_nav_box.launch // amcl起動
+
+# 端末2
+$ rosbag play rosbagファイル名 --topics /tf /tf_static /scan
+```
+
 
 ---
 

@@ -3,7 +3,7 @@
 何よりもまず始めにオドメトリを調整することをオススメします. 調整するパラメータは以下の２つです.
 - wheel_radius_multiplier 
 - wheel_separation_multiplier
-  - icartでは`~/icart_mini/icart_mini_control/config`の`icart_mini_control.yaml`で設定されています
+  - [icart](https://github.com/open-rdc/icart)では`~/icart_mini/icart_mini_control/config`の`icart_mini_control.yaml`で設定されています
 
 ---
 ## 1. 調整の準備
