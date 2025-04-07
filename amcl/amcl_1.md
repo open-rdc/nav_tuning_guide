@@ -53,11 +53,12 @@ $ rosbag play rosbagファイル名
 ```
 
 ##### オフラインで自己位置推定を行って確認
-- 上記の方法とは異なり, パラメータを実際に変更しながらパーティクルの変化を確認することができます
+- 上記の方法とは異なり, パラメータを実際に変更しながらパーティクルの変化を確認することができます  
+- 下記の[only_localization.launch](https://github.com/YuseiShiozawa/orne-box/blob/test4/orne_box_navigation_executor/launch/only_localization.launch)は私が適当に作った, localizaion(amcl, emcl, emcl2のいずれか)とRvizを同時に立ち上げるものです. 割と便利な気がするのでコピペして活用してください 
+  - amclとRvizが立ち上がればなんでもいいです
 ```bash
 # 端末1
-$ roslaunch roslaunch orne_box_navigation_executor play_waypoints_nav_box.launch  
-// amcl起動
+$ roslaunch roslaunch orne_box_navigation_executor only_localization.launch 
 
 # 端末2
 $ rosbag play rosbagファイル名 --topics /tf /tf_static /scan
