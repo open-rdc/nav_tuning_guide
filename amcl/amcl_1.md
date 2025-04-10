@@ -58,7 +58,7 @@ $ rosbag play rosbagファイル名
   - amclとRvizが立ち上がればなんでもいいです
 ```bash
 # 端末1
-$ roslaunch roslaunch orne_box_navigation_executor only_localization.launch 
+$ roslaunch orne_box_navigation_executor only_localization.launch 
 
 # 端末2
 $ rosbag play rosbagファイル名 --topics /tf /tf_static /scan
