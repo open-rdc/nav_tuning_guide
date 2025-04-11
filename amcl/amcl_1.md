@@ -24,7 +24,7 @@
 ## 調整方法
 
 ### 1. rosbagの記録
-まず, navigation開始時に`rosbag`を記録します. このとき, 上記パラメータはデフォルト値, もしくはそれ以上の値に設定してください. 
+まず, navigation開始時に`rosbag`を記録します. このとき, 上記パラメータはデフォルト値に設定してください. 
 
 ```bash
 $ rosbag record -a
@@ -79,7 +79,11 @@ $ rosbag play rosbagファイル名 --topics /tf /tf_static /scan
   - 発生する箇所を0にするのはかなり難しいと思います
   - できる限り減らしましょう   
   - 大きくしすぎたら, ずれる箇所は増えます  
-![](images/tatezure.png)
+![](images/tatezure.png)  
+
+- ここの調整をしないと, 開けた道に出たときに終わります
+![](images/gochagocha.png)
+
 
 
 
