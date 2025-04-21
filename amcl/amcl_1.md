@@ -1,4 +1,4 @@
-# amclのパラメータ調整方法_1
+# AMCLのパラメータ調整方法_1
 
 重要なのは`odom_alpha1`~`odom_alpha4`で, このパラメータがデフォルトのままでは自己位置が破綻することが多いです.    
 ここでは端的にそれらのパラメータの意味を説明し, その調整方法を述べます.  
@@ -13,10 +13,12 @@
 - **意味**: ロボットの動きの回転成分から予想される回転推定におけるノイズ *(default: 0.2)*
 
 ### `odom_alpha2`
-- **意味**: ロボットの動きの並進成分から予想される回転推定におけるノイズ *(default: 0.2)*
+- **意味**: ロボットの動きの並進成分から予想される回転推定におけるノイズ *(default: 0.2)*  
+- このパラメータの調整は自己位置推定の正確さに直結します(回転方向のずれ) 
 
 ### `odom_alpha3`
 - **意味**: ロボットの動きの並進成分から予想される並進推定におけるノイズ *(default: 0.2)*
+- このパラメータの調整は自己位置推定の正確さに直結します(並進方向のずれ)
 
 ### `odom_alpha4`
 - **意味**: ロボットの動きの回転成分から予想される並進推定におけるノイズ *(default: 0.2)*
@@ -58,9 +60,9 @@ $ rosbag play rosbagファイル名
 ##### オフラインで自己位置推定を行って確認
 - 上記の方法とは異なり, パラメータを実際に変更しながらパーティクルの変化を確認することができます 
 - 再生するrosbagファイルはコントローラ操作時のもの
-  - navigation時のrosbagファイルでもできないことはないのですが, tfが重複し画面が見づらいです
-- 下記の[only_localization.launch](https://github.com/YuseiShiozawa/orne-box/blob/test4/orne_box_navigation_executor/launch/only_localization.launch)は私が適当に作った, localizaion(amcl, emcl, emcl2のいずれか)とRvizを同時に立ち上げるものです. 割と便利な気がするのでコピペして活用してください 
-  - amclとRvizが立ち上がればなんでもいいです
+  - navigation時のrosbagファイルでもできないことはないのですが, tfが重複しRviz画面が見づらいです
+- 下記の[only_localization.launch](https://github.com/YuseiShiozawa/orne-box/blob/test4/orne_box_navigation_executor/launch/only_localization.launch)は私が適当に作った, localizaion(AMCL, EMCL, EMCL2のいずれか)とRvizを同時に立ち上げるものです. 割と便利な気がするのでコピペして活用してください 
+  - AMCLとRvizが立ち上がればなんでもいいです
 ```bash
 # 端末1
 $ roslaunch orne_box_navigation_executor only_localization.launch 
@@ -74,13 +76,13 @@ $ rosbag play rosbagファイル名 --topics /tf /tf_static /scan
 
 ### 3. 問題の特定とパラメータ調整
 
-#### a. 縦方向のずれ
-以下の図のように縦方向にずれている場合, `odom_alpha3`の値を調整します.    
+#### a. 並進方向のずれ
+以下の図のように並進方向にずれている場合, `odom_alpha3`の値を調整します.    
 ずれていても正しい位置に復帰できれば問題ありませんが, 根本的な解決を目指すべきです.  
 
 - 具体的には, `odom_alpha3`の値を()していきます(0.05 ~ 0.1ずつ)  
-- おそらくこのような縦方向のずれが発生する場合は, 他の箇所でも複数似たようなことが起きると思います
-- 値を徐々に大きくし, 縦方向のずれが発生する箇所が減ることを確認してください  
+- おそらくこのような並進方向のずれが発生する場合は, 他の箇所でも複数似たようなことが起きると思います
+- 値を徐々に大きくし, 並進方向のずれが発生する箇所が減ることを確認してください  
   - 発生する箇所を0にするのはかなり難しいと思います
   - できる限り減らしましょう   
   - ()しすぎたら, ずれる箇所は増えます  
