@@ -24,7 +24,7 @@
 ## 調整方法
 
 ### 1. rosbagの記録
-まず, navigation開始時に`rosbag`を記録します. このとき, 上記パラメータは()に設定してください. 
+まず, `rosbag`を記録します. navigation時とコントローラ操作時の両方を用意することが望ましいです. このとき, 上記パラメータは()に設定してください. 
 
 ```bash
 $ rosbag record -a
@@ -40,6 +40,7 @@ Rvizを使用して, パーティクルの散らばりや自己位置のずれ�
 #### コマンド例:
 ##### 過去のデータを再生して確認
 - 過去のデータをそのまま確認します
+- 再生するrosbagファイルはnavigation時のもの
 ```bash
 # 端末1
 $ roscore
@@ -53,7 +54,9 @@ $ rosbag play rosbagファイル名
 ```
 
 ##### オフラインで自己位置推定を行って確認
-- 上記の方法とは異なり, パラメータを実際に変更しながらパーティクルの変化を確認することができます  
+- 上記の方法とは異なり, パラメータを実際に変更しながらパーティクルの変化を確認することができます 
+- 再生するrosbagファイルはコントローラ操作時のもの
+  - navigation時のrosbagファイルでもできないことはないのですが, tfが重複し画面が見づらいです
 - 下記の[only_localization.launch](https://github.com/YuseiShiozawa/orne-box/blob/test4/orne_box_navigation_executor/launch/only_localization.launch)は私が適当に作った, localizaion(amcl, emcl, emcl2のいずれか)とRvizを同時に立ち上げるものです. 割と便利な気がするのでコピペして活用してください 
   - amclとRvizが立ち上がればなんでもいいです
 ```bash
