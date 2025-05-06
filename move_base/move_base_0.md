@@ -31,10 +31,9 @@
 ## 必須のパラメータ調整/設定
 ### costmap_common_params.yaml
 - `footprint`  
-設定しないと, ロボットのfootprintは下の図の赤線のように円形となってしまいます. このままでは, 突然スタック状態に陥る等の問題が起こり得ます.  
-<img src="images/default_foopri.png" width="200">   
-orne-boxでは, `footprint: [[0.433, 0.254], [-0.187, 0.254], [-0.187, -0.254], [0.433, -0.254]]`とすることで, 下の図のようにロボットモデルにあった設定ができます.   
-<img src="images/box1_foopri2.png" width="200">   
+設定しないと, ロボットのfootprintは左図の赤線のように円形となってしまいます. このままでは, 突然スタック状態に陥る等の問題が起こり得ます. orne-boxでは, `footprint: [[0.433, 0.254], [-0.187, 0.254], [-0.187, -0.254], [0.433, -0.254]]` とすることで, 右図のようにロボットモデルにあった設定ができます.   
+<img src="images/default_foopri.png" width="200" style="margin-right: 50px;">        <img src="images/box1_foopri2.png" width="190">   
+
 
 - `publish_frequency`  
 設定しないと, Rvizでのコストマップの可視化ができません. このパラメータの単位は`Hz`なので適当に`2.0`など, デフォルト値よりも大きな値にしてください. 
