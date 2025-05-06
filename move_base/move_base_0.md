@@ -4,6 +4,7 @@
 
 ## パラメータの説明([参考](http://wiki.ros.org/costmap_2d))
 ### costmap_2d
+---
 #### common
 ##### `footprint`
 - **意味**: ロボットの形状を定義するためのパラメータ *(default: use `robot_radius`, default: 0.46)*
@@ -15,22 +16,24 @@
 - **意味**: トピックに関連付けられているデータ型 *(default: PointCloud)*
 ##### `clearing`(`observation_sources`で定義した名前空間内で)
 - **意味**: 障害物がなくなった場所を地図上から消すためのパラメータ *(default: false)*
+---
 #### local
 ##### `rolling_window`
 - **意味**: ローリングウィンドウバージョンのコストマップを使用するかどうか *(default: false)*
 - `static_map`パラメータがtrueに設定されている場合, このパラメータは`false`に設定する必要がある
+---
 #### global
 ##### `map_topic`
 - **意味**: コストマップが静的マップをサブスクライブするトピック名 *(default: map)*
 ##### `static_map`
 - **意味**: グローバルコストマップにおいて、`map_server` から提供される静的マップを使用するためのパラメータ *(default: false)*
-
+---
 ## 必須のパラメータ調整/設定
 ### costmap_common_params.yaml
 - `footprint`  
 設定しないと, ロボットのfootprintは下の図の赤線のように円形となってしまいます. このままでは, 突然スタック状態に陥る等の問題が起こり得ます.  
-<img src="images/default_foopri.png" width="200">  
-[orne-box](https://github.com/open-rdc/orne-box)では, `footprint: [[0.433, 0.254], [-0.187, 0.254], [-0.187, -0.254], [0.433, -0.254]]`とすることで, 下の図のようにロボットモデルにあった設定ができます.   
+<img src="images/default_foopri.png" width="200">   
+orne-boxでは, `footprint: [[0.433, 0.254], [-0.187, 0.254], [-0.187, -0.254], [0.433, -0.254]]`とすることで, 下の図のようにロボットモデルにあった設定ができます.   
 <img src="images/box1_foopri2.png" width="200">   
 
 - `publish_frequency`  
@@ -55,6 +58,7 @@ scan:
   }
 
 ```
+---
 ### local_costmap_params.yaml
 - `rolling_window`  
 公式のドキュメント(下記[引用](https://robo-marc.github.io/navigation_documents/costmap_2d.html#costmap2d-static-map-layer))の指示に従いましょう. ということで, local_costmapでは`static_map`を使わないので`true`にします.  
@@ -65,7 +69,7 @@ scan:
 local_costmap:       
   rolling_window: true   
 ```
-
+---
 
 ### global_costmap_params.yaml
 - `map_topic`  
@@ -93,3 +97,4 @@ global_costmap:
    StaticLayer: 
      map_topic: map_for_costmap
 ```
+---
