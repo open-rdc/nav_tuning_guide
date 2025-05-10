@@ -9,7 +9,7 @@
 ##### `footprint`
 - **意味**: ロボットの形状を定義するためのパラメータ *(default: use `robot_radius`, default: 0.46)*
 ##### `publish_frequency`
-- **意味**: Rvizで可視化するためのパブリッシュ周波数 *(default: 0.0)*
+- **意味**: Rvizで可視化するためのパブリッシュ周波数(Hz) *(default: 0.0)*
 ##### `observation_sources`
 - **意味**: センサの名前リスト, 名前空間の定義 *(default: "")*
 ##### `data_type`(`observation_sources`で定義した名前空間内で)
@@ -97,3 +97,9 @@ global_costmap:
      map_topic: map_for_costmap
 ```
 ---
+ここからの調整↓
+- [Move baseのパラメータ](move_base_1.md)
+- [recovery_behaviorのパラメータ](recovery_behavior.md)
+- [costmapのパラメータ](costmap.md)
+- [local_plannerのパラメータ](local_planner.md)
+- [global_plannerのパラメータ](global_planner.md)
