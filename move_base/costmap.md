@@ -2,7 +2,7 @@
 デフォルト値のままでも動きはするので, 必要に応じて(障害物を避けることができない等)変更してください. なお, `costmap_common_params.yaml`で定義しているパラメータがあれば, デフォルト値はそこで指定した値になります.  
 
 ## パラメータの説明([参考](https://robo-marc.github.io/navigation_documents/costmap_2d.html#costmap2d-parameters))
-localとglobalで重複しているパラメータが多いですが, 各名前空間で定義することで, それぞれに合ったパラメータを指定できます.  
+localとglobalで重複しているパラメータが多いですが, 各名前空間で定義することで, それぞれの役割に合ったパラメータを指定できます.  
 ### local_costmap
 #### `update_frequency`  
 - **意味**: マップの更新周波数(Hz) *(default: 5.0)*  
