@@ -1,5 +1,5 @@
 # local_plannerのパラメータ  
-ここでは, 使用しているプランナーが`base_local_planner::TrajectoryPlannerROS`であることを前提に説明します. 他のプランナーでも同じ名前, もしくは似たような名前で同じ役割のパラメータがあります.  
+ここでは, 使用しているプランナーが`base_local_planner/TrajectoryPlannerROS`であることを前提に説明します. 他のプランナーでも同じ名前, もしくは似たような名前で同じ役割のパラメータがあります.  
 
 ## パラメータの説明([参考](https://robo-marc.github.io/navigation_documents/base_local_planner.html#parameters-baselocalplanner))  
 下記パラメータは, 選択したlocal_plannerの名前空間で定義してください.  
