@@ -24,7 +24,7 @@ $ rosbag record -a
 上記だと, 津田沼チャレンジコースでは数十GBくらいになるので下記を推奨. 必要最低限のトピックのみを記録します. 
 
 ```bash
-$ rosbag record /tf /tf_static /surestar_scan
+$ rosbag record /tf /tf_static /rfans/surestar_scan
 ```
 
 #### 2. slam_toolboxの実行
