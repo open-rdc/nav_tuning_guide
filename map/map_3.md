@@ -1,4 +1,4 @@
-# 地図の作り方_2(glim)
+# 地図の作り方_3(glim)
 ここでは[glim](https://github.com/koide3/glim)で地図を作成する手順と, 有効なパラメータを紹介します. glimは3D-LiDARとIMUを組み合わせて高精度な三次元地図を構築するGraphベースSLAMです.   
 
 ## パラメータ設定
