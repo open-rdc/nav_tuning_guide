@@ -106,7 +106,7 @@ $ rosbag play rosbagファイル名 --topics /tf /tf_static /scan
 
 #### c. 自己位置が徐々にずれていく → `odom_alpha1`~`odom_alpha4`
 以下の図のように, 自己位置が徐々にずれていく場合: 
-- `odom_alpha1`~`odom_alpha4`(特にalpha2, 3)を**0.05~0.1ずつ減少**
+- `odom_alpha1`〜`odom_alpha4`(特にalpha2, 3)を**0.05~0.1ずつ減少**
   - パーティクルが広がり, 推定される自己位置の範囲を制限するため   
 ---
 ![かなり極端な例](images/jump.gif) 
