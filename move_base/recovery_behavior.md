@@ -1,6 +1,6 @@
 # recovery_behaviorのパラメータ調整方法
 
-recovery_behaviorは, ロボットがナビゲーション中に障害物によりスタックした場合, 再度進行可能な状態に戻すために実行される動作です. `move_base` では複数のリカバリ動作を順番に試行します.  
+recovery_behaviorは, ロボットがナビゲーション中に障害物等によりスタックした場合, 再度進行可能な状態に戻すために実行される動作です. `move_base` では複数のリカバリ動作を順番に試行します.  
 ここでは, その設定方法について述べます.  
 
 ## 提供されているプラグイン
@@ -66,6 +66,15 @@ recovery_behaviorは, ロボットがナビゲーション中に障害物によ�
 - `layer_names`  
 costmapに登録されている名前と一致している必要があります. 複数指定可能.  
 
+例
+```
+conservative_reset:
+  reset_distance: 0.0             # 0.0にするとコストマップ全体をリセット
+  force_updating: true            # リカバリ直後にマップ更新
+  affected_maps: both             # local/global/bothから選択
+  layer_names: ["obstacles"]      # 対象レイヤー名（複数指定可）
+```
+
 ---
 ### `rotate_recovery`パラメータ
 下記パラメータはプラグイン設定で指定した名前空間で定義してください.  
@@ -74,6 +83,13 @@ costmapに登録されている名前と一致している必要があります.
 
 - `frequency`  
 デフォルト値で十分です.  
+
+例  
+```
+rotate_recovery:
+  sim_granularity: 0.017          # 回転の細かさ（必要に応じて変更）
+  frequency: 20.0                 # 制御周波数（通常はデフォルトでOK）
+```
 
 ---
 ### `move_slow_and_clear`
@@ -88,7 +104,18 @@ costmapに登録されている名前と一致している必要があります.
 - `planner_namespace`   
 使用しているローカルプランナーの値に設定してください.  
 
+例  
+```
+move_slow_and_clear:
+  clearing_distance: 0.5
+  limited_trans_speed: 0.25
+  limited_rot_speed: 0.45
+  limited_distance: 0.3
+  planner_namespace: DWAPlannerROS # 使用中のローカルプランナーと一致させる
+```
+
 ---
+
 他の調整↓
 - [Move baseのパラメータ](move_base_1.md)
 - [costmapのパラメータ](costmap.md)
