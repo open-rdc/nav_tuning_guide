@@ -2,7 +2,7 @@
    
 Move Baseの土台となるパラメータを調整します. ここで述べるパラメータはデフォルト値でも動作しますが, ロボットを動かす環境等に応じて適切に調整することで, より安定した経路計画を実現できます. 
 
-## パラメータの説明([参考](https://robo-marc.github.io/navigation_documents/move_base.html))
+## パラメータの説明([参考](http://wiki.ros.org/move_base#Parameters))
 ### `base_global_planner`
 - **意味**: 使用するグローバルプランナーのプラグイン名 *(default: navfn/NavfnROS)*
 ### `base_local_planner`
@@ -27,14 +27,18 @@ Move Baseの土台となるパラメータを調整します. ここで述べる
 - `base_local_planner`  
 デフォルトが`base_local_planner/TrajectoryPlannerROS`ですが, これよりも理解しやすいインターフェースを備え, ホロノミックロボットにも対応している`dwa_local_planner/DWAPlannerROS`を選択できます.  
 - `controller_frequency`  
-低すぎると動きが鈍く, 高すぎるとCPU負荷も高くなります. 
+周期が低いとロボットの動きが遅れます. 高すぎるとCPU負荷が増大するため, バランスを取って設定してください.  
+また, このパラメータが適切な値でないと, **ROSWARNが出る**ことがあります. (実行時のターミナルに注意)  
 - `planner_frequency`  
-デフォルト値でも, 経路がブロックされている場合や目標地を更新するときには再計画します. それら以外で再計画が必要な場合はデフォルト値よりも大きな値にしてください.  
+デフォルト値でも, 経路がブロックされている場合や目標地を更新するときには再計画します. 通常時にも定期的に再計画したい場合は, 適当なHz（例: 1.0）を設定してください.  
 - `planner_patience`, `controller_patience`, `oscillation_timeout`  
-`oscillation_timeout`のみデフォルト値が`0.0`なので注意. 各値はリカバリ動作の実行のしやすさなので, ナビゲーション環境に応じて変更してください.  
+いずれも「リカバリ動作を実行するまでの待機時間」です.  
+特に`oscillation_timeout`はデフォルトが`0.0`で無効になっているため, スタック対策として有効化する場合は値を設定する必要があります.  
 - `oscillation_distance`  
-小さすぎるとスタック状態とみなされないので注意. 
+移動距離がこの値を超えないとスタックと判断されません. 小さすぎるとリカバリが発動しない場合があるので注意してください.  
+
 ---
+
 他の調整↓
 - [recovery_behaviorのパラメータ](recovery_behavior.md)
 - [costmapのパラメータ](costmap.md)
