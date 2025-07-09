@@ -1,8 +1,8 @@
 # costmapのパラメータ  
-デフォルト値のままでも動きはするので, 必要に応じて(障害物を避けることができない等)変更してください. なお, `costmap_common_params.yaml`で定義しているパラメータがあれば, デフォルト値はそこで指定した値になります.  
+`costmap`はロボットの周囲環境を表現する重要なマップです. デフォルト設定でも動作はしますが, 障害物回避の精度や反応性を高めたい場合には調整が効果的です.  
 
-## パラメータの説明([参考](https://robo-marc.github.io/navigation_documents/costmap_2d.html#costmap2d-parameters))
-localとglobalで重複しているパラメータが多いですが, 各名前空間で定義することで, それぞれの役割に合ったパラメータを指定できます.  
+## パラメータの説明([参考](http://wiki.ros.org/costmap_2d))
+`local_costmap`と`global_costmap`で重複しているパラメータが多いですが, 各名前空間で定義することで, それぞれの役割に合ったパラメータを指定できます.  名前空間で個別に定義しない場合は, その値が`local_costmap`, `global_costmap`両方のパラメータに適用されます.  
 ### local_costmap
 #### `update_frequency`  
 - **意味**: マップの更新周波数(Hz) *(default: 5.0)*  
@@ -32,9 +32,11 @@ localとglobalで重複しているパラメータが多いですが, 各名前�
 ### local_costmap_params.yaml 
 - `update_frequency`  
 マップの更新頻度を調整します. 大きくしすぎると, 動的な障害物をコストに反映できなくなるので注意が必要です. 反対に小さくしすぎると, 過度にCPUに負荷をかけることになるので注意.  
+また, このパラメータが適切な値でないと, **ROSWARNが出る**ことがあります. (実行時のターミナルに注意)  
 
 - `width`, `height`  
 local_costmap(下図の明るい正方形の部分)の大きさを調整します. 大きな値にすれば遠くの障害物も前もってコストに反映できますが, その分計算量が増えるので注意が必要です.  
+ただし, 実際にどの範囲まで障害物が認識されるかは, `obstacle_range`の値によって制限されるため, こちらの設定値も注意してください.   
 <img src="images/costmap_width_height.png" width="300">    
 
 - `inflation_radius`  
@@ -43,6 +45,7 @@ local_costmap(下図の明るい正方形の部分)の大きさを調整しま�
 
 - `cost_scaling_factor`  
 下図は, どれも`inflation_radius`が同じ値のときに, `cost_scaling_factor`の値を変更した図ですが, コストのスケールが変更されていることが分かります. この値を大きくしすぎると, `inflation_radius`の値を変更しても, 極端に限られた範囲でしかコストを膨張させることができないで注意が必要です.    
+
 cost_scaling_factor= 1.0  
 <img src="images/radius1.2_factor1.png" width="150">  
 cost_scaling_factor = 10  
@@ -70,6 +73,7 @@ local_costmapで記述した内容と同じ
 local_costmapで記述した内容と同じ
 
 ---
+
 他の調整↓
 - [Move baseのパラメータ](move_base_1.md)
 - [recovery_behaviorのパラメータ](recovery_behavior.md)
