@@ -35,5 +35,5 @@ Move Baseの各要素の調整と設定.
 ## 地図作成
 地図作成の手順とパラメータ. 
 - [map_1.md](./map/map_1.md): 地図作成方法の説明
-- [map_2.md](./map/map_2.md): slam_toolboxでの地図作成方法
-- [map_3.md](./map/map_3.md): glimでの地図作成方法
+- [slam_toolbox.md](./map/slam_toolbox.md): slam_toolboxでの地図作成方法
+- [glim.md](./map/glim.md): glimでの地図作成方法
