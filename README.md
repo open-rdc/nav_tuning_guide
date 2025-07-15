@@ -22,6 +22,7 @@ rosbagを活用してパラメータを調整します.
 - [amcl_0.md](./amcl/amcl_0.md): 最低限の設定
 - [amcl_1.md](./amcl/amcl_1.md): 主要パラメータの調整
 - [amcl_2.md](./amcl/amcl_2.md): その他パラメータの調整
+- [amcl_roserror.md](./amcl/amcl_roserror.md): ROS_ERRORが出たときの問題と対処法
 
 ### Move Base（経路計画）
 Move Baseの各要素の調整と設定. 
