@@ -10,7 +10,8 @@
 - オンライン（実ロボットで走行しながら）・オフライン（rosbagから）どちらにも対応
 - 2D-LiDARまたは3D-LiDAR(`pointcloud_to_laserscan`あり)を使用  
 
-詳細は[こちら](./slam_toolbox.md)
+詳細は[こちら](./slam_toolbox.md)  
+<img src="./images/25_tsudanuma_rotate_200m.png" width="500">   
 
 ## 方法2: 三次元地図の作成後, スライスして二次元地図を作成
 例: [glim](https://github.com/koide3/glim) + [pointcloud2pgm_slicer](https://github.com/cafeline/pointcloud2pgm_slicer)  
@@ -19,6 +20,6 @@
 - オフラインでの実行
 - **GPUなし環境では処理負荷が高くなるため注意**
 
-詳細は[こちら](./glim.md)
-
+詳細は[こちら](./glim.md)  
+<img src="./images/map3d.gif" width="500">   
 
