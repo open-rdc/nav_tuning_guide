@@ -32,6 +32,7 @@ Move Baseの各要素の調整と設定.
 - [costmap.md](./move_base/costmap.md): コストマップのパラメータ調整
 - [local_planner.md](./move_base/local_planner.md): ローカルプランナーのパラメータ調整
 - [global_planner.md](./move_base/global_planner.md):グローバルプランナーのパラメータ調整
+- [move_base_roswarn.md](./move_base/move_base_roswarn.md): ROS_WARNが出たときの問題と対処法
 
 ## 地図作成
 地図作成の手順とパラメータ. 
