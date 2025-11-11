@@ -39,3 +39,4 @@ Move Baseの各要素の調整と設定.
 - [map_1.md](./map/map_1.md): 地図作成方法の説明
 - [slam_toolbox.md](./map/slam_toolbox.md): slam_toolboxでの地図作成方法
 - [glim.md](./map/glim.md): glimでの地図作成方法
+- [tsukuba_map.md](./map/tsukuba_map.md): 大規模屋外環境での地図解像度設定
