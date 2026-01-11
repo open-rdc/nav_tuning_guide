@@ -18,14 +18,14 @@
 
 ### AMCL（自己位置推定）
 rosbagを活用してパラメータを調整します.  
-- [amcl_0.md](./amcl/amcl_0.md): 最低限の設定
+- [amcl_0.md](./amcl/amcl_0.md): 必要最小限の設定
 - [amcl_1.md](./amcl/amcl_1.md): 主要パラメータの調整
 - [amcl_2.md](./amcl/amcl_2.md): その他パラメータの調整
 - [amcl_roserror.md](./amcl/amcl_roserror.md): ROS_ERRORが出たときの問題と対処法
 
 ### Move Base（経路計画）
 Move Baseの各要素の調整と設定. 
-- [move_base_0.md](./move_base/move_base_0.md): 最低限の調整/設定
+- [move_base_0.md](./move_base/move_base_0.md): 必要最小限の設定
 - [move_base_1.md](./move_base/move_base_1.md): Move Baseの土台となるパラメータ調整
 - [recovery_behavior.md](./move_base/recovery_behavior.md): リカバリ動作のパラメータ調整
 - [costmap.md](./move_base/costmap.md): コストマップのパラメータ調整
@@ -35,7 +35,7 @@ Move Baseの各要素の調整と設定.
 
 ## 地図作成
 地図作成の手順とパラメータ. 
-- [map_1.md](./map/map_1.md): 地図作成方法の説明
+- [map_1.md](./map/map_1.md): 地図作成方法に関して
 - [slam_toolbox.md](./map/slam_toolbox.md): slam_toolboxでの地図作成方法
 - [glim.md](./map/glim.md): glimでの地図作成方法
 - [tsukuba_map.md](./map/tsukuba_map.md): 大規模屋外環境での地図解像度設定
